@@ -1,0 +1,16 @@
+{
+    "TELEGRAPHIE": {
+        "haw04.hou51.eng": [1,2],
+        "kni21.tel57.ger": [1,2,3],
+        "rob48.vin92.ger99": [1],
+        "fri64.int08.ger": [1],
+        "slo72.dra10.ger": [15],
+        "ost53.geh12.ger": [1,2],
+        "gol80.mag13.ger": [1],
+        "fre56.unb30.ger": [1,2],
+        "zwe81.ers43.ger": [8]
+    },
+    "UNIVERSALBIBLIOTHEK": {
+        "las48.uni04.ger" : [1,2,3,4]
+    }
+}

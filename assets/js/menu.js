@@ -14,7 +14,7 @@ var references = null;
     ENTRY FUNCTION
 */
 
-function showDrahtwort(){
+function showPage(){
     createHome();
     initRemoteContentJSON(data, initContent);
 }

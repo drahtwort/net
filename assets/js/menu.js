@@ -72,6 +72,7 @@ function createSection(id, name) {
     let a = createNode('a', id);
     a.innerHTML = name;
     span.appendChild(a);
+    // span.innerHTML += '\n';
     pre.appendChild(span);
 }
 

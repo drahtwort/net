@@ -19,9 +19,10 @@ var references = null;
 var header = null;
 
 function showDrahtwort(){
-    let root = document.getElementById('b');
-    let pre = createNode('pre','content');
+    var root = document.getElementById('b');
+    var pre = createNode('pre','content');
     root.appendChild(pre);
+    createHome();
     initRemoteContentJSON(data, initContent);
 }
 
@@ -37,28 +38,66 @@ function initReferences(raw_data) {
 
 function initDescriptors(raw_data) {
     description = JSON.parse(raw_data);
-    fillDescContent('TELEGRAPHIE');
-    /*
-    createHome();
-    createDescSection();
-    */
+    // initSections();
+    // createSection('HISTORY', 'MEDIA HISTORY');
+    // clickableSection('HISTORY');
+    // createSection('ELECTRICITY', 'MEDIA HISTORY');
+    // clickableSection('ELECTRICITY');
+    // fillDescContent('TELEGRAPHIE');
 }
 
+function initSections() {
+    var descriptors = Object.keys(description)
+    for ( var i = 0; i < descriptors.length; i++ ) (function(i){
+        createSection(descriptors[i],descriptors[i]);
+        clickableSection(descriptors[i]);
+        // console.log(descriptors[i])
+        // itemLists[i].onclick = function() {
+            // do something
+        // }
+    })(i);
+}
+
+
 function createHome(){
-    let pre = document.getElementById('content');
+    var pre = document.getElementById('content');
     pre.innerHTML += full;
     pre.innerHTML += full;
-    pre.innerHTML +=  fillLineLeft(name + right , limit);
-    pre.innerHTML +=  fillLineLeft(today + right , limit);
+    pre.innerHTML += fillLineLeft('CLICK TO READ' + right , limit);
+    pre.onclick = function() {fillDescContent('HISTORY');};
+    // pre.innerHTML +=  fillLineLeft(name + right , limit);
+    // pre.innerHTML +=  fillLineLeft(today + right , limit);
     pre.innerHTML += full;
     pre.innerHTML += full;
     // header = pre.innerHTML;
 }
 
+function initSection(id, name) {
+    createSection(id, name);
+    clickableSection(id);
+}
+
+function createSection(id, name) {
+    var pre = document.getElementById('content');
+    var a = createNode('a', id);
+    a.innerHTML = fillLineLeft(name + right, limit);
+    pre.appendChild(a);
+    pre.innerHTML += full;
+    pre.innerHTML += full;
+}
+
+function clickableSection(id) {
+    let a = document.getElementById(id);
+    a.onclick = function () {
+        fillDescContent(id);
+    };
+    console.log(id);
+    console.log("made clickable!");
+}
+
 function createDescSection() {
     let pre = document.getElementById('content');
     let short = fill.repeat(9);
-    let forward = true;
     let offset = 1;
     Object.keys(description).forEach( function(d, index) {
         let a = createNode('a');
@@ -76,6 +115,10 @@ function createDescSection() {
 }
 
 function fillDescContent(descriptor) {
+    let root = document.getElementById('b');
+    root.innerHTML = '';
+    let pre = createNode('pre','content');
+    root.appendChild(pre);
     let editions = Object.keys(description[descriptor]);
     for(var i = 0; i < editions.length; i++) {
         let ed = editions[i];

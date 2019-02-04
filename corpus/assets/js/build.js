@@ -7,6 +7,7 @@ function initRemoteContent(url, func) {
         }
     };
     xhttp.open("GET", url, true);
+    xhttp.overrideMimeType("application/json");
     xhttp.send();
 }
 

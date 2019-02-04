@@ -1,4 +1,4 @@
-const sections = {"CORPUS":"./corpus","DESCRIPTIO":"./descript/"}
+const sections = {"CORPUS":"./corpus/","DESCRIPTIO":"./descript/"}
 
 function showStart(){
   let root = document.getElementById('b');

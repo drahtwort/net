@@ -6,6 +6,7 @@ body {
 a:hover {
     text-decoration: none;
     color: #ee0000;
+    cursor: pointer;
 }
 
 a {
@@ -16,5 +17,6 @@ a {
 pre {
     word-wrap: break-word;
     white-space: pre-wrap;
+    display: block;
     margin: 0 0;
 }

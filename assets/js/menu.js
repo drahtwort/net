@@ -114,9 +114,11 @@ function fillSectionContent(descriptor) {
 function processContent(idx, range){
     let pre = document.getElementById('content');
     let ref = references[idx].split(",")
+    let author = ref[0];
+    let title = ref.slice(1).join(",");
+    pre.innerHTML +=  author + empty;
+    pre.innerHTML +=  title.substring(1) + empty + empty;
     let parts = idx.split(".");
-    pre.innerHTML +=  ref[0] + empty;
-    pre.innerHTML +=  ref[1].substring(1) + empty + empty;
     let pos = 0;
     let val = 0;
     let end = range.length;

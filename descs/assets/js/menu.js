@@ -1,6 +1,6 @@
 const empty = '\n';
 
-const name = 'DRAHTWORT';
+const name = 'DESCRIPTION';
 
 const data = './data/collection.json';
 const refs = './data/references.json';

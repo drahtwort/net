@@ -1,6 +1,6 @@
-const sections = {"CORPUS":"./corpus","DESCRIPTION":"./descs/"}
+const sections = {"CORPUS":"./corpus","DESCRIPTIO":"./descript/"}
 
-function showTree(){
+function showStart(){
   let root = document.getElementById('b');
   let pre = createNode('pre','root');
   let span = createNode('span');

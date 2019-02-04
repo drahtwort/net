@@ -1,6 +1,6 @@
 const empty = '\n';
 
-const name = 'DESCRIPTION';
+const name = 'DESCRIPTIO';
 
 const data = './data/collection.json';
 const refs = './data/references.json';

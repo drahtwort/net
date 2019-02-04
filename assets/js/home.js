@@ -13,6 +13,35 @@ function showStart(){
 }
 
 function showSections() {
+
+    let root = document.getElementById('root');
+    root.innerHTML = '';
+
+    let span = createNode('span');
+    let a = createNode('a');
+    a.innerHTML = 'CORPUS';
+    a.href = './corpus/';
+    span.appendChild(a);
+
+    span.innerHTML += '\n';
+
+    a = createNode('a');
+    a.innerHTML = 'DESCRIPT';
+    a.href = './descript/';
+    span.appendChild(a);
+
+    span.innerHTML += '\n';
+    /*
+    a = createNode('a');
+    a.innerHTML = 'LECTURA';
+    a.href = './lectura/';
+    span.appendChild(a);
+    */
+
+    root.appendChild(span);
+}
+
+function showSectionsTree() {
   let root = document.getElementById('root')
   document.getElementsByTagName('a')[0].onclick   = null;
   Object.keys(sections).forEach(function(branch, index) {

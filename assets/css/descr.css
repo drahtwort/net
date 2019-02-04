@@ -10,13 +10,14 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
     color: #000000;
 }
 
 a:hover {
     text-decoration: none;
     color: #ee0000;
+    cursor: pointer;
 }
 
 a {
@@ -25,7 +26,7 @@ a {
 }
 
 pre {
-    width: 60ch;
+    width: 77ch;
     word-wrap: break-word;
     white-space: pre-wrap;
 }

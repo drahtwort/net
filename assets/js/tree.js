@@ -1,5 +1,5 @@
 // const www = './resources/data/www.json';
-const www = './assets/data/ROOT.json';
+const www = './data/ROOT.json';
 var content = null;
 var prefix = '';
 
@@ -18,6 +18,8 @@ function initContent(raw_data){
   span.appendChild(a);
   pre.appendChild(span);
   root.appendChild(pre);
+  // comment out next line to see entry page
+  showSection(span,content.ROOT,prefix);
 }
 
 function showSection(elem, data, prefix) {

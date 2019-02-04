@@ -1,6 +1,6 @@
 const empty = '\n';
 
-const name = 'DESCRIPTIO';
+const name = 'DESCRIPT';
 
 const data = './data/collection.json';
 const refs = './data/references.json';
@@ -16,7 +16,7 @@ var references = null;
 
 function showPage(){
     createHome();
-    initRemoteContentJSON(data, initContent);
+    initRemoteContent(data, initContent);
 }
 
 /*
@@ -38,16 +38,18 @@ function createHome(){
 
 function initContent(raw_data){
     content = JSON.parse(raw_data);
-    initRemoteContentJSON(refs, initReferences);
+    initRemoteContent(refs, initReferences);
 }
 
 function initReferences(raw_data) {
     references = JSON.parse(raw_data);
-    initRemoteContentJSON(desc, initDescriptors);
+    initRemoteContent(desc, initDescriptors);
 }
 
 function initDescriptors(raw_data) {
     description = JSON.parse(raw_data);
+    // comment out next line to show entry page
+    showSections(Object.keys(description));
 }
 
 
@@ -73,6 +75,7 @@ function createSection(id, name) {
     a.innerHTML = name;
     span.appendChild(a);
     // span.innerHTML += '\n';
+    span.innerHTML += ' ';
     pre.appendChild(span);
 }
 

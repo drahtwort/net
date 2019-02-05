@@ -21,6 +21,7 @@ a {
 pre {
     word-wrap: break-word;
     white-space: pre-wrap;
+    width: 65em;
     /* display: block; */
     /* width: 89ch; */
     /* margin: 0 0; */

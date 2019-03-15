@@ -30,16 +30,6 @@ function showSections(elem) {
     let span = createNode('span');
     let a = createNode('a');
 
-    // section DESCRIPT
-    span = createNode('span');
-    span.innerHTML = '--  ';
-    a = createNode('a');
-    a.innerHTML = 'DESCRIPT';
-    a.href = './dsc/';
-    span.appendChild(a);
-    span.innerHTML += '\n';
-    root.appendChild(span);
-
     // section EDITIONS
     span = createNode('span');
     span.innerHTML = '--  ';
@@ -60,7 +50,24 @@ function showSections(elem) {
     span.innerHTML += '\n';
     root.appendChild(span);
 
+    span = createNode('span');
+    span.innerHTML += '\n\n';
+    root.appendChild(span);
+
+    // section DESCRIPT
+    span = createNode('span');
+    span.innerHTML = '--  ';
+    a = createNode('a');
+    a.innerHTML = 'DESCRIPT';
+    a.href = './dsc/';
+    span.appendChild(a);
+    span.innerHTML += '\n';
+    root.appendChild(span);
+
+
     // section TREE (VIEW)
+
+    /*
     span = createNode('span');
     span.innerHTML = '--  ';
     a = createNode('a');
@@ -69,5 +76,8 @@ function showSections(elem) {
     span.appendChild(a);
     span.innerHTML += '(VIEW)\n';
     root.appendChild(span);
+    */
+
+
 
 }

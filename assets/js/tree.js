@@ -1,25 +1,29 @@
 // const www = './resources/data/www.json';
-const www = './data/ROOT.json';
+const www = './data/content.json';
 var content = null;
 var prefix = '';
 
-function showTree(){
-  initRemoteContent(www, initContent);
+function initDrahtwort() {
+    showTree(www)
+}
+
+function showTree(path){
+  initRemoteContent(path, initContent);
 }
 
 function initContent(raw_data){
-  let root = document.getElementById('b');
-  content = JSON.parse(raw_data);
-  let pre = createNode('pre','root');
-  let span = createNode('span');
-  let a = createNode('a');
-  a.innerHTML = 'CORPUS\n';
-  a.onclick = function(){showSection(span,content.ROOT,prefix);};
-  span.appendChild(a);
-  pre.appendChild(span);
+    content = JSON.parse(raw_data);
+    var root = document.getElementById('b');
+    var pre = createNode('pre','root');
+    Object.keys(content).forEach(function(branch, index) {
+      let span = createNode('span');
+      let a = createNode('a');
+      a.innerHTML = branch + '\n';
+      a.onclick = function(){showSection(span, content[branch], prefix);};
+      span.appendChild(a);
+      pre.appendChild(span);
+  });
   root.appendChild(pre);
-  // comment out next line to see entry page
-  showSection(span,content.ROOT,prefix);
 }
 
 function showSection(elem, data, prefix) {
@@ -33,15 +37,23 @@ function showSection(elem, data, prefix) {
       a.innerHTML = branch + '\n';
       if (typeof data[branch] === 'object') {
         a.onclick = function(){showSection(span, data[branch], prefix+'    ');};
-      }
+      } else {
+          a.onclick = function () {
+              window.location = data[branch];
+          };
+        }
     } else {
       span.innerHTML = prefix + '├── ';
       a.innerHTML = branch + '\n';
       if (typeof data[branch] === 'object') {
         a.onclick = function() {showSection(span, data[branch], prefix+'│   ');};
+      } else {
+          a.onclick = function () {
+              window.location = data[branch];
+          };
       }
-    }
-    span.appendChild(a);
+  }
+  span.appendChild(a);
     insertAfter(span, prev);
     prev = span;
   });

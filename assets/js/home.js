@@ -1,3 +1,7 @@
+/*
+    CREATE HOME PAGE
+*/
+
 function showStart(){
   let root = document.getElementById('b');
   let pre = createNode('pre','root');
@@ -14,6 +18,10 @@ function showStart(){
   root.appendChild(pre);
 }
 
+/*
+    SHOW SECTIONS (ON CLICK)
+*/
+
 function showSections(elem) {
     elem.onclick = function(){window.location="./index.html"};
 
@@ -27,7 +35,7 @@ function showSections(elem) {
     span.innerHTML = '--  ';
     a = createNode('a');
     a.innerHTML = 'DESCRIPT';
-    a.href = './descript/';
+    a.href = './dsc/';
     span.appendChild(a);
     span.innerHTML += '\n';
     root.appendChild(span);

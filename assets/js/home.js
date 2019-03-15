@@ -55,11 +55,11 @@ function showSections(elem) {
     // section TREE (VIEW)
     span = createNode('span');
     span.innerHTML = '--  ';
-    let a = createNode('a');
+    a = createNode('a');
     a.innerHTML = 'TREE';
     a.href = './tree/';
     span.appendChild(a);
-    span.innerHTML += '\n';
+    span.innerHTML += '(VIEW)\n';
     root.appendChild(span);
 
 }

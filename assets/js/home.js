@@ -1,62 +1,65 @@
-const sections = {"CORPUS":"./corpus/","DESCRIPTIO":"./descript/"}
-
 function showStart(){
   let root = document.getElementById('b');
   let pre = createNode('pre','root');
   let span = createNode('span');
   let a = createNode('a');
-  a.innerHTML = 'DRAHTWORT\n';
-  a.onclick = function(){showSections();};
+  a.innerHTML = 'DRAHTWORT';
+  a.onclick = function(){showSections(a);};
   span.appendChild(a);
+  pre.appendChild(span);
+  span = createNode('span');
+  span.innerHTML += '\n';
+  span.innerHTML += '\n';
   pre.appendChild(span);
   root.appendChild(pre);
 }
 
-function showSections() {
+function showSections(elem) {
+    elem.onclick = function(){window.location="./index.html"};
 
     let root = document.getElementById('root');
-    root.innerHTML = '';
-
+    // root.innerHTML = '';
     let span = createNode('span');
     let a = createNode('a');
-    a.innerHTML = 'CORPUS';
-    a.href = './corpus/';
-    span.appendChild(a);
 
-    span.innerHTML += '\n';
-
+    // section DESCRIPT
+    span = createNode('span');
+    span.innerHTML = '--  ';
     a = createNode('a');
     a.innerHTML = 'DESCRIPT';
     a.href = './descript/';
     span.appendChild(a);
-
     span.innerHTML += '\n';
-    /*
-    a = createNode('a');
-    a.innerHTML = 'LECTURA';
-    a.href = './lectura/';
-    span.appendChild(a);
-    */
-
     root.appendChild(span);
-}
 
-function showSectionsTree() {
-  let root = document.getElementById('root')
-  document.getElementsByTagName('a')[0].onclick   = null;
-  Object.keys(sections).forEach(function(branch, index) {
-    let span = createNode('span',branch);
-    let a = createNode('a');
-    if(index == Object.keys(sections).length - 1) {
-      span.innerHTML = '└── ';
-      a.innerHTML = branch + '\n';
-      a.href = sections[branch];
-    } else {
-      span.innerHTML = '├── ';
-      a.innerHTML = branch + '\n';
-      a.href = sections[branch];
-    }
+    // section EDITIONS
+    span = createNode('span');
+    span.innerHTML = '--  ';
+    a = createNode('a');
+    a.innerHTML = 'EDITIONS';
+    a.href = 'https://drahtwort.github.io/eds/';
     span.appendChild(a);
-    root.appendChild(span)
-  });
+    span.innerHTML += '\n';
+    root.appendChild(span);
+
+    // section QUOTES
+    span = createNode('span');
+    span.innerHTML = '--  ';
+    a = createNode('a');
+    a.innerHTML = 'QUOTES';
+    a.href = 'https://drahtwort.github.io/qts/';
+    span.appendChild(a);
+    span.innerHTML += '\n';
+    root.appendChild(span);
+
+    // section TREE (VIEW)
+    span = createNode('span');
+    span.innerHTML = '--  ';
+    let a = createNode('a');
+    a.innerHTML = 'TREE';
+    a.href = './tree/';
+    span.appendChild(a);
+    span.innerHTML += '\n';
+    root.appendChild(span);
+
 }

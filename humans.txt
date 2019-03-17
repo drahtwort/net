@@ -1,6 +1,8 @@
 ╔═══════════╗
 ║ DRAHTWORT ║
-╚═══════════╝                                         ╔═ Staff
-                                                      ║ ╔═ Contact
-══ Meta Wolf, Don Heartfield & Hektor Rottweiler ═════╝ ║
-══ mail@drahtwort.org ══════════════════════════════════╝
+╚═══════════╝         ╔═ Staff
+                      ║ ╔═ Contact
+══ Meta Wolf  ════════╣ ║
+══ Don Heartfield ════╣ ║
+══ Hektor Rottweiler ═╝ ║
+══ mail@drahtwort.org ══╝
